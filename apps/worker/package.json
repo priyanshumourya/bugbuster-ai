@@ -1,0 +1,22 @@
+{
+  "name": "@bugbuster/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/worker.ts",
+    "start": "tsx src/worker.ts",
+    "build": "tsc -b",
+    "check-types": "tsc -b --pretty"
+  },
+  "dependencies": {
+    "@bugbuster/config": "*",
+    "@bugbuster/db": "*",
+    "@bugbuster/types": "*",
+    "bullmq": "^5.52.2",
+    "tsx": "^4.19.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3"
+  }
+}

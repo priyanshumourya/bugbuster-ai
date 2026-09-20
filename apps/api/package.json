@@ -1,0 +1,26 @@
+{
+  "name": "@bugbuster/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "db:migrate": "tsx src/database/migrate.ts",
+    "build": "tsc -b",
+    "check-types": "tsc -b --pretty"
+  },
+  "dependencies": {
+    "@bugbuster/config": "*",
+    "@bugbuster/db": "*",
+    "@bugbuster/types": "*",
+    "bullmq": "^5.52.2",
+    "fastify": "^5.3.2",
+    "ioredis": "^5.6.1",
+    "tsx": "^4.19.4",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3"
+  }
+}

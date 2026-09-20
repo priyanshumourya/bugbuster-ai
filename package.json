@@ -1,0 +1,28 @@
+{
+  "name": "bugbuster",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,worker -c blue,green \"npm run dev -w @bugbuster/api\" \"npm run dev -w @bugbuster/worker\"",
+    "dev:api": "npm run dev -w @bugbuster/api",
+    "dev:worker": "npm run dev -w @bugbuster/worker",
+    "build": "tsc -b",
+    "check-types": "tsc -b --pretty",
+    "db:migrate": "npm run db:migrate -w @bugbuster/api",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.3"
+  }
+}
